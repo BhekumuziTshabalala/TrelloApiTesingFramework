@@ -1,4 +1,4 @@
-package org.example;
+package org.bhekumuzi;
 
 public class Boards {
 }

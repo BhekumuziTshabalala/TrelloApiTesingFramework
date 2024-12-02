@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Ignore properties files
+*.properties
+
 ### IntelliJ IDEA ###
 *.iws
 *.iml
