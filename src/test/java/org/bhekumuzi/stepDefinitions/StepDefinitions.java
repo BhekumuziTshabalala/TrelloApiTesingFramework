@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 import org.bhekumuzi.Resources.APIResources;
 import org.bhekumuzi.Resources.PayLoads;
 import org.bhekumuzi.Resources.Utils;
+import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -28,7 +29,7 @@ public class StepDefinitions extends Utils {
                 .log().all();
     }
 
-    @When("a user sends a {string} request to the {string}")
+    @When("the user sends a {string} request to the {string}")
     public void aUserSendsARequest(String method, String resource) throws IOException {
         APIResources apiResource = APIResources.valueOf(resource);
         switch (method.toUpperCase().trim()){
@@ -39,5 +40,11 @@ public class StepDefinitions extends Utils {
                 break;
         }
 
+    }
+
+
+    @Then("the API call is successful with a status code {string}")
+    public void theAPICallIsSuccessfulWithAStatusCode(String statusCode) {
+        Assert.assertEquals(response.statusCode(), Integer.parseInt(statusCode) ,"Status code is not as expected");
     }
 }

@@ -1,5 +1,4 @@
 package org.bhekumuzi.Resources;
-import groovy.lang.GString;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -20,6 +19,7 @@ public class Utils {
                     .queryParam("key", getGlobalConfigurations("api_key") )
                     .queryParam("token", getGlobalConfigurations("api_token"));
         }
+        System.out.println(">>>> " +getGlobalConfigurations("api_key"));
         return requestSpecification;
     }
 

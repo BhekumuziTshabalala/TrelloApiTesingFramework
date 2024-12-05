@@ -1,5 +1,8 @@
 package org.bhekumuzi;
 
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+//@JsonSerialize(using = CustomSerializer.class)
 public class Board {
     private final String name;
     private String desc;
